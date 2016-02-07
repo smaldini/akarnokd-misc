@@ -390,7 +390,7 @@ public class ReactiveStreamsImpls {
 
     // -------------------------------------------------------------------------
 
-    @Benchmark
+    /*@Benchmark
     public void range_akka(Blackhole bh) throws InterruptedException {
         LatchedRSObserver<Integer> lo = new LatchedRSObserver<>(bh);
         akRange.subscribe(lo);
@@ -449,7 +449,7 @@ public class ReactiveStreamsImpls {
         } else {
             lo.latch.await();
         }
-    }
+    }*/
 
     public static void main(String[] args) throws Exception {
         ReactiveStreamsImpls o = new ReactiveStreamsImpls();
@@ -477,7 +477,7 @@ public class ReactiveStreamsImpls {
 
     // -------------------------------------------------------------------------
 
-    @Benchmark
+   /* @Benchmark
     public void range_akka2(Blackhole bh) throws InterruptedException {
         LatchedRSObserver<Integer> lo = new LatchedRSObserver<>(bh);
         ak2Range.subscribe(lo);
@@ -536,7 +536,7 @@ public class ReactiveStreamsImpls {
         } else {
             lo.latch.await();
         }
-    }
+    }*/
 
     // -------------------------------------------------------------------------
 //@Benchmark
