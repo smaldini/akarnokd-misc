@@ -148,8 +148,8 @@ public class ReactiveStreamsImpls {
         rscRange = PublisherBase.range(1, times);
         rscRangeFlatMapJust = rscRange.flatMap(PublisherBase::just);
         rscRangeFlatMapRange = rscRange.flatMap(v -> PublisherBase.range(v, 2));
-        rscRangeAsync = PublisherBase.wrap(Stream.from(rscRange).dispatchOn(exec1));
-        rscRangePipeline = PublisherBase.wrap(Stream.from(rscRange).publishOn(exec1).dispatchOn(exec2));
+        rscRangeAsync = rscRange.observeOn(exec1);
+        rscRangePipeline = rscRange.subscribeOn(exec1).observeOn(exec2);
 
         values = rx2Range.toList().toBlocking().first();
         
